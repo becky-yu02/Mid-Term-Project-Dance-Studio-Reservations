@@ -178,7 +178,7 @@ function renderReservations(data) {
     reservationDiv = document.getElementById(`reservation-room103`)
     reservationDiv.innerHTML = '';
     data
-        .sort((a,b) => b.start_time - a.start_time)
+        .sort((a,b) => new Date(a.start_time) - new Date(b.start_time))
         .forEach(x => {
             let reservationRoomDiv = document.getElementById(`reservation-room${x.room_number}`)
             
