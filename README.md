@@ -1,6 +1,7 @@
 # Dance Studio Reservation App
 
-This project is a simple web application built using **FastAPI** for the backend and **HTML/CSS/JavaScript** for the frontend, with HXMLHttpRequest for frontend-backend communication. It allows users to manage dance studio room reservations with **basic CRUD operations**. 
+This project is a simple web application built using **FastAPI** for the backend and **HTML/CSS/JavaScript** for the frontend, 
+with **XMLHttpRequest** for frontend-backend communication (via API endpoints at /Reservations). It allows users to manage dance studio room reservations with **basic CRUD operations**. 
 
 All data is stored in an in-memory list, so it resets when the server restarts. Bootstrap was used to create buttons and various modals. 
 
@@ -13,16 +14,19 @@ Files, along with screenshots of the the web application are included below with
 - **Update reservations**: Edit an existing reservation.
 - **Delete reservations**: Delete and remove a reservation.
 
+Various validation rules and constraints are also included: 
+All fields on the create/edit forms need to be filled out, start time should be before the end time, and reservation room and times can't overlap with one another.
 
 ## Repository Structure
 - `README.md` - Project documentation
-- `frontend/`  
-  - `index.html` - Main HTML page for the web interface  
+- `frontend/`
+  - `favicon.ico` - a favicon of a woman dancing
+  - `index.html` - Main HTML page for the web structure and interface  
   - `main.js` - JavaScript file for frontend interactions and API calls  
   - `style.css` - CSS file for styling the page and buttons  
 
 - `main.py` - FastAPI application
-- `reservation.py` - Reservation model
+- `reservation.py` - Reservation model using Pydantic
 - `reservation_routes.py` - FastAPI CRUD routes
 - `requirements.txt` - Python dependencies
 
@@ -35,8 +39,8 @@ Files, along with screenshots of the the web application are included below with
   
     ![New Reservation Form](screenshots/new_reservation.png)
 
-  - `create_output.png` - Image of what the page looks like after creating room reservations <br
-                                                                                               >
+  - `create_output.png` - Image of what the page looks like after creating room reservations <br>
+                                                                                               
 ![Created Reservations](screenshots/create_output.png)
     
   - `edit_time_error.png` - Image of the form to edit a reservation, including an error message regarding nonsensical time slots.<br>
